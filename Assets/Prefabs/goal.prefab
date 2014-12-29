@@ -10,10 +10,11 @@ GameObject:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
   - 61: {fileID: 6100000}
+  - 50: {fileID: 5000000}
   - 114: {fileID: 11400000}
   m_Layer: 0
   m_Name: goal
-  m_TagString: Untagged
+  m_TagString: Goal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,6 +31,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!50 &5000000
+Rigidbody2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: .0500000007
+  m_GravityScale: 0
+  m_FixedAngle: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
 --- !u!61 &6100000
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -52,6 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de73df994f95e4413ab5f8d7ab3e3d51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Marimba: {fileID: 100000, guid: f47c3835153734a48af59e5a9a0f7ea8, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -73,7 +90,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0aa46b5b066ae49578cdd046cf81d931, type: 3}
-  m_Color: {r: .835294127, g: .65882355, b: .819607854, a: .498039216}
+  m_Color: {r: .835294127, g: .65882355, b: .819607854, a: .203921571}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

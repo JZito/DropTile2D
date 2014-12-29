@@ -15,6 +15,7 @@ public class PatternCounter : MonoBehaviour {
 	public float loopTime = 30f;
 	public AudioSource audioSource;
 	public List<GameObject> observers = new List<GameObject> ();
+	public Color patternColor;
 
 	private float nextBeatSample;
 	private float[] samplePeriods;

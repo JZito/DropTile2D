@@ -26,10 +26,10 @@ public class Spawner : MonoBehaviour {
 
 	public void Awake ()
 	{
-		timing.Add (3.0f);
-		timing.Add (4.0f);
+		timing.Add (5.0f);
+		timing.Add (8.0f);
 		timing.Add (6.0f);
-		timing.Add (2.0f);
+		timing.Add (4.0f);
 	}
 
 	public IEnumerator spawnNext() 
@@ -41,7 +41,8 @@ public class Spawner : MonoBehaviour {
 			print (decider + this.name);
 			if(decider <= 4)
 			{
-				patternCount1 = MainSpawner.GetComponent<PatternArray> ().patterns [Random.Range (0, 4)];
+				int randomNumber = Random.Range (0,6);
+				patternCount1 = MainSpawner.GetComponent<PatternArray> ().patterns [randomNumber];
 				GameObject g = Instantiate(moverPrefab,new Vector3(16,row,0),Quaternion.identity)as GameObject;
 		//		print ((int)group + "group");
 				var uniqueArray = MainSpawner.GetComponent<SoundArray> ().arrayOfArrays [(int)group];
@@ -52,13 +53,14 @@ public class Spawner : MonoBehaviour {
 		//		print (this.name + uniqueArray [Random.Range (lowRange, highRange)]);
 				g.GetComponent<Mover> ().sample = uniqueArray[Random.Range (lowRange, highRange)];
 				g.GetComponent<Mover> ().pattern = patternCount1;
+				g.GetComponentInChildren<SpriteRenderer>().color = MainSpawner.GetComponent<ColorArray>().colorArray[randomNumber];
 				//
 				patternCount1.GetComponent<PatternCounter> ().observers.Add (g);
 
 			}
 			else if (decider > 4)
 			{
-				patternCount1 = MainSpawner.GetComponent<PatternArray> ().patterns [Random.Range (0, 4)];
+				patternCount1 = MainSpawner.GetComponent<PatternArray> ().patterns [Random.Range (0, 6)];
 				GameObject g = Instantiate(hotPrefab,new Vector3(16,row,0),Quaternion.identity)as GameObject;
 				//		print ((int)group + "group");
 				var uniqueArray = MainSpawner.GetComponent<SoundArray> ().arrayOfArrays [(int)group];

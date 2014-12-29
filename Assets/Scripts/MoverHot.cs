@@ -21,7 +21,7 @@ public class MoverHot : MonoBehaviour {
 	private float timer;
 	private	Vector3 pos;
 	private bool fadeOut;
-	private bool stopIt;
+	public bool stopIt;
 	//	private bool dropIt = true;
 	float time;
 	
@@ -48,7 +48,7 @@ public class MoverHot : MonoBehaviour {
 //	
 	void OnTouchDown () 
 	{
-		print ("you touched this");
+		gameObject.tag = "Touched";
 
 
 	}
@@ -57,9 +57,18 @@ public class MoverHot : MonoBehaviour {
 	{
 		stopIt = true;
 		Vector3 worldPosition = Camera.main.ScreenToWorldPoint (Input.mousePosition);
-		transform.position = new Vector3 (worldPosition.x, transform.position.y, 0);
+		transform.position = new Vector3 (worldPosition.x, worldPosition.y, 0);
 	}
 
+	void OnTouchUp()
+	{
+		stopIt = false;
+	}
+
+	void OnTouchExit()
+	{
+		stopIt = false;
+	}
 	void Update ()
 	{
 		if (!stopIt)
@@ -79,27 +88,6 @@ public class MoverHot : MonoBehaviour {
 			}
 		}
 	}
-	/*
-	private IEnumerator FadeOut ()
-	{
-		if (transform.position.x < 16)
-		{
-		audio.volume = 1;
-		}
 
-		else if (transform.position.x >= 16)
-		{
-			float volume = 1;
-			float t = 0;
-			while(t < 1)
-			{
-				t += Time.deltaTime/1f;
-				volume = Mathf.Lerp(1, 0, t);
-				audio.volume = volume;
-				yield return null;
-			}
-		}
-	}
-	*/
 	
 }
