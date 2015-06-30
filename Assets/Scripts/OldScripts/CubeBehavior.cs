@@ -18,7 +18,7 @@ public class CubeBehavior : MonoBehaviour {
 	void Update ()
 	{
 		if ((beatObserver.beatMask & BeatType.OnBeat) == BeatType.OnBeat) {
-			audio.Play ();
+			GetComponent<AudioSource>().Play ();
 		}
 		if ((beatObserver.beatMask & BeatType.UpBeat) == BeatType.UpBeat) {
 		//	transform.Rotate(Vector3.forward, 45f);

@@ -108,8 +108,8 @@ public class PatternCounter : MonoBehaviour {
 							{
 								t += Time.deltaTime/2f;
 								volume = Mathf.Lerp(1, 0, t);
-								obj.audio.volume = volume;
-								if (obj.audio.volume == 0)
+								obj.GetComponent<AudioSource>().volume = volume;
+								if (obj.GetComponent<AudioSource>().volume == 0)
 								{
 //									print ("it's 0");
 									observers.Remove(obj);

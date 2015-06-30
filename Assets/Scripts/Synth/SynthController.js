@@ -32,8 +32,8 @@ private var modules = [SynthModule(), SynthModule()];
 private var switcher = 0;
 
 function Start() {
-    audio.clip = AudioClip.Create("(null)", 0xfffffff, 1, SynthConfig.kSampleRate, false, true, function(data:float[]){});
-    audio.Play();
+    GetComponent.<AudioSource>().clip = AudioClip.Create("(null)", 0xfffffff, 1, SynthConfig.kSampleRate, false, true, function(data:float[]){});
+    GetComponent.<AudioSource>().Play();
 }
 
 function Update() {

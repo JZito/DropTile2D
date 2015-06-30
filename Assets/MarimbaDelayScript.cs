@@ -5,11 +5,11 @@ public class MarimbaDelayScript : MonoBehaviour {
 
 	private IEnumerator DestroyThis (float aValue, float aTime)
 	{
-		float alpha = transform.renderer.material.color.a;
+		float alpha = transform.GetComponent<Renderer>().material.color.a;
 		for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / aTime)
 		{
 			Color newColor = new Color(1, 1, 1, Mathf.Lerp(alpha,aValue,t));
-			transform.renderer.material.color = newColor;
+			transform.GetComponent<Renderer>().material.color = newColor;
 			yield return new WaitForSeconds (5.0f);
 			DestroyImmediate (this.gameObject);
 			yield return null;

@@ -54,7 +54,7 @@ public class Mover : MonoBehaviour {
 		MainSpawner = GameObject.FindGameObjectWithTag ("TheSpawner");
 pos = new Vector3 (0, transform.position.y, 0);
 		transform.position = pos;
-		audio.clip = sample;
+		GetComponent<AudioSource>().clip = sample;
 
 	}
 	
@@ -64,14 +64,14 @@ pos = new Vector3 (0, transform.position.y, 0);
 		if ((beatObserver.beatMask & BeatType.OnBeat) == BeatType.OnBeat) {
 //			Debug.Log(beatObserver.beatValue);
 			if (beatObserver.beatValue != BeatValue.None) {
-
+				print (this.name + "beep borp");
 				transform.position = new Vector3(transform.position.x + 1/BeatDecimalValues.values[(int)beatObserver.beatValue], transform.position.y, transform.position.z);//beatPositions[beatCounter];
 			}
 			else {
 				transform.position = new Vector3(transform.position.x + 1.0f, transform.position.y, transform.position.z);//beatPositions[beatCounter];
 			}
 //			Debug.Log(transform.position);
-			audio.Play ();
+			GetComponent<AudioSource>().Play ();
 			beatCounter = (++beatCounter == beatPositions.Length ? 0 : beatCounter);
 		}
 	}

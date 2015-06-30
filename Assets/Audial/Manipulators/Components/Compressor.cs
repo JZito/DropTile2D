@@ -146,7 +146,7 @@ namespace Audial{
 				if(env > Threshold){
 					compressMod = Mathf.Clamp(compressMod - (env - Threshold) * Slope, 0, 1);
 				}
-
+		/*
 				mergedData = 0;
 				for(var c = 0; c < channels; c++){
 					compressed[c] = input[c] * compressMod;
@@ -154,13 +154,13 @@ namespace Audial{
 					data[i+c] = (compressed[c] * CompressedGain+input[c] * DryGain) * OutputGain;
 				}
 				mergedData = Mathf.Pow(mergedData, 1f/channels);
-
+		*/
 				#if UNITY_EDITOR
 				MAX_inputGain = Mathf.Max(MAX_inputGain, rms);
-				MAX_compressedGain = Mathf.Max(MAX_compressedGain, mergedData * CompressedGain);
+			//	MAX_compressedGain = Mathf.Max(MAX_compressedGain, mergedData * CompressedGain);
 				MAX_dryGain = Mathf.Max(MAX_dryGain, rms*DryGain);
 				MAX_outputGain = Mathf.Max (MAX_outputGain, Mathf.Sqrt(Mathf.Pow(data[i],2)+Mathf.Pow(data[i+1],2)));
-				MAX_gainReduction = Mathf.Max(MAX_gainReduction, rms - mergedData);
+			//	MAX_gainReduction = Mathf.Max(MAX_gainReduction, rms - mergedData);
 				#endif
 			}
 #if UNITY_EDITOR

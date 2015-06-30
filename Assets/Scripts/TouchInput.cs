@@ -22,7 +22,7 @@ public class TouchInput : MonoBehaviour {
 			touchList.Clear();
 
 				
-			RaycastHit2D hit = Physics2D.Raycast(camera.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);   
+			RaycastHit2D hit = Physics2D.Raycast(GetComponent<Camera>().ScreenToWorldPoint(Input.mousePosition), Vector2.zero);   
 			
 				
 			if(hit.collider!=null) {
@@ -62,7 +62,7 @@ public class TouchInput : MonoBehaviour {
 
 		foreach (Touch touch in Input.touches) {
 
-			RaycastHit2D hit = Physics2D.Raycast(camera.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);   
+			RaycastHit2D hit = Physics2D.Raycast(GetComponent<Camera>().ScreenToWorldPoint(Input.mousePosition), Vector2.zero);   
 			
 
 				if(hit.collider!=null) {

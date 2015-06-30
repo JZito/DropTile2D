@@ -37,7 +37,7 @@ public class MoverDouble : MonoBehaviour {
 		MainSpawner = GameObject.FindGameObjectWithTag ("TheSpawner");
 		pos = new Vector3 (0, transform.position.y, 0);
 		transform.position = pos;
-		audio.clip = sample;
+		GetComponent<AudioSource>().clip = sample;
 		
 		
 	}
@@ -56,7 +56,7 @@ public class MoverDouble : MonoBehaviour {
 				transform.position = new Vector3(transform.position.x + 1.0f, transform.position.y, transform.position.z);//beatPositions[beatCounter];
 			}
 			//			Debug.Log(transform.position);
-			audio.Play ();
+			GetComponent<AudioSource>().Play ();
 			beatCounter = (++beatCounter == beatPositions.Length ? 0 : beatCounter);
 			}
 		

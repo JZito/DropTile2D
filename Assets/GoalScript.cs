@@ -17,7 +17,7 @@ public class GoalScript : MonoBehaviour {
 	{
 		Vector3 here = this.gameObject.transform.position;
 		GameObject m = Instantiate (Marimba, here, Quaternion.identity) as GameObject;
-		m.audio.clip = coll.audio.clip;
+		m.GetComponent<AudioSource>().clip = coll.GetComponent<AudioSource>().clip;
 		m.GetComponent<MoverDouble> ().pattern = coll.GetComponent<MoverHot> ().pattern;
 //		create gameobject for new delayed audio sound
 //		Instantiate(said game object)
