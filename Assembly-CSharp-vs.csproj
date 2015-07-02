@@ -73,6 +73,7 @@
      <Compile Include="Assets\ColorArray.cs" />
      <Compile Include="Assets\GoalScript.cs" />
      <Compile Include="Assets\MarimbaDelayScript.cs" />
+     <Compile Include="Assets\Movement.cs" />
      <Compile Include="Assets\MoverDouble.cs" />
      <Compile Include="Assets\Scripts\BeatArray.cs" />
      <Compile Include="Assets\Scripts\BeatSynchronizer\BeatCounter.cs" />
